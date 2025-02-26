@@ -1,3 +1,5 @@
+# Run the structure coloring R file before this file.
+
 import numpy as np
 import pandas as pd
 
