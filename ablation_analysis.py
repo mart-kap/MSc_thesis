@@ -3,7 +3,8 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 
-inputs = "C:/Users/martk/Documents/wur/masterthesis/microscopy/multiphoton/tiff/second/third"
+inputs = "C:/Users/martk/Documents/wur/masterthesis/microscopy/multiphoton/tiff"
+threshold = 80 # Can be changed when not as much change is observed in sample(s).
 files = os.listdir(inputs)
 files = sorted([file for file in files if file.endswith(".tif")])
 with open(f'Ablation_analysis_second_threshold2.csv', 'w') as f:
@@ -34,7 +35,7 @@ with open(f'Ablation_analysis_second_threshold2.csv', 'w') as f:
         cv2.imwrite(f'{folder}_SumProjection.tif', SumProjection.astype(np.uint16))
 
         mask = np.zeros_like(SumProjection).astype(np.uint8)
-        mask[SumProjection > 2] = 255
+        mask[SumProjection > threshold] = 255
         cv2.imwrite(f'{folder}_Mask.tiff', mask)
 
         contours, hierarchy = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
