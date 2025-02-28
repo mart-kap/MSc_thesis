@@ -20,8 +20,8 @@ def coloring(property, kingdom):                # Give the property (charge/hydr
         if pd.notna(row['reference']):
             value_for_color = row['structureSD']                # If there is, take the value from the structure SD
                                                                 # and use it to find the right color.
-            colorindex = round(value_for_color * 256 / maxval)  # This 0.4 can also be changed to maxval (now changed
-                                                                # to lower value because of one very high value).
+            colorindex = round(value_for_color * 256 / maxval)  # This maxval can also be changed to a lower value (when
+                                                                # there are a few very high values).
             if colorindex > 255:
                 colorindex = 255                                # This is for when not using maxval above, sets the
                                                                 # color to the 'highest'.
