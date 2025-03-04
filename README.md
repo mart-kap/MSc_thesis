@@ -1,5 +1,7 @@
 What follows here is an overview of the scripts and what they were used for.
 
+- HMMer.py takes the proteomes of the selected organisms and filters out the actin proteins.
+
 -	tree.R is used to create the large phylogenetic tree.
 
 -	properties.R calculates the values for the hydropathy and charge analysis of the actins.
