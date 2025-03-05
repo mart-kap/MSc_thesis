@@ -1,6 +1,6 @@
 What follows here is an overview of the scripts and what they were used for.
 
-- HMMer.py takes the proteomes of the selected organisms and filters out the actin proteins.
+-	HMMer.py takes the proteomes and filters out the actin proteins based on homology to actins of Marchantia, _Phytophthora_ _infestans_, and _Thorarchaeota_ _archaeon_.
 
 -	tree.R is used to create the large phylogenetic tree.
 
